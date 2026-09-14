@@ -60,8 +60,8 @@ REQUIRED_CHANNELS = [
 ]
 
 FILE_EXPIRY_SECONDS = 10 * 60
-REQUEST_COOLDOWN_SECONDS = 15
-AUTO_RANGE_GAP_SECONDS = 0.5
+REQUEST_COOLDOWN_SECONDS = 10
+AUTO_RANGE_GAP_SECONDS = 0.1
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -802,7 +802,6 @@ async def start_auto_range(update, context, story_id, start_ep, end_ep, file_typ
         f"Class {start_ep:02d} to {end_ep:02d} ❄️ Ranking and Comparison\n\n"
         "📚 <b>Auto Episode Delivery</b>\n"
         "Episodes automatically bheje ja rahe hain...\n\n"
-        "Har episode ke beech 500 milliseconds ka gap hai."
     )
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("❌ Cancel", callback_data="cancel_auto_range")]
